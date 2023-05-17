@@ -35,7 +35,7 @@ const SidebarIcon = ({ icon, slug = "/", text = "Tooltip" }) => {
       <div
         className="relative flex items-center justify-center
                       h-12 w-12 my-4 mx-auto
-                      bg-gray-400 hover:bg-green-600 dark:bg-gray-800
+                      hover:bg-green-600 bg-gray-800
                       text-green-500 hover:text-white
                       hover:rounded-xl rounded-3xl
                       transition-all duration-300 ease-linear
