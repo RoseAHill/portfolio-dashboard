@@ -1,9 +1,10 @@
-import { BiUser, BiGroup, BiPlus } from "react-icons/bi";
-import { AiOutlineSetting } from "react-icons/ai";
+import { BiUser, BiGroup, BiArrowBack } from "react-icons/bi";
 import projects from "../../data/projects";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const { pathname } = useLocation();
+
   return (
     <div
       className="fixed top-0 left-0 h-screen w-16 m-0 text-xl
@@ -17,21 +18,23 @@ const Sidebar = () => {
             key={idx}
             text={project.title}
             icon={<project.icon />}
-            slug={project.slug}
+            url={project.url}
           />
         ))}
       </div>
       <div className="settings">
         <SidebarIcon text="Teams" icon={<BiGroup />} />
-        <SidebarIcon text="Settings" icon={<AiOutlineSetting />} />
+        <Link to="/" state={{ previousPath: pathname }}>
+          <SidebarIcon text="Back" icon={<BiArrowBack />} />
+        </Link>
       </div>
     </div>
   );
 };
 
-const SidebarIcon = ({ icon, slug = "/", text = "Tooltip" }) => {
+const SidebarIcon = ({ icon, url = "/", text = "Tooltip" }) => {
   return (
-    <NavLink to={slug}>
+    <NavLink to={url}>
       <div
         className="relative flex items-center justify-center
                       h-12 w-12 my-4 mx-auto

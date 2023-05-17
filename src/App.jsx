@@ -11,7 +11,7 @@ function App() {
       <main className='overflow-x-hidden h-full'>
       <Routes>
         {projects.map((project, idx) => (
-          <Route key={idx} path={project.slug} icon={<project.icon/>} element={<project.element/>}/>
+          <Route key={idx} path={project.url} icon={<project.icon/>} element={<project.element/>}/>
         ))}
       </Routes>
       </main>

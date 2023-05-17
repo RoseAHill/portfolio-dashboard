@@ -7,13 +7,13 @@ const projects = [
   {
     title: "Dashboard",
     icon: AiOutlineDashboard,
-    slug: "/",
+    url: "/",
     element: Dashboard
   },
   {
     title: "To Do List",
     icon: BiListCheck,
-    slug: "/todo-list",
+    url: "/todo-list",
     element: ToDoList
   },
 ]
